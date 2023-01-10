@@ -10,6 +10,11 @@ const app = express();
 const port = 9000;
 // middleware
 app.use(express.json());
+app.use((req, res, next) => {
+  res.setHeader("Acess-Control-Allow-Origin", "*");
+  res.setHeader("Acess-Control-Allow-Headers", "*");
+  next();
+});
 // db config
 
 mongoose.connect(connection_url, {
