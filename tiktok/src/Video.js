@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import VideoFooter from "./VideoFooter";
 import VideoSidebar from "./VideoSidebar";
 import "./Video.css";
-function Video({ url }) {
+function Video({ url, channel, des, song, messages, shares, like }) {
   const [playing, setPlaying] = useState(false);
   const videoref = useRef(null);
   const handelVideoPress = () => {
@@ -26,12 +26,8 @@ function Video({ url }) {
         src={url}
       ></video>
 
-      <VideoFooter
-        channel="Pretiee7"
-        des="This is description "
-        song="99 problem but REACT ain't One Hahaha"
-      />
-      <VideoSidebar likes={111} shares={222} messages={333} />
+      <VideoFooter channel={channel} des={des} song={song} />
+      <VideoSidebar like={like} shares={shares} messages={messages} />
     </div>
   );
 }
