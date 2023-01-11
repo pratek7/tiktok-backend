@@ -3,7 +3,7 @@ import "./VideoSidebar.css";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CommentIcon from "@mui/icons-material/Comment";
 import ShareIcon from "@mui/icons-material/Share";
-function VideoSidebar({ like, shares, messages }) {
+function VideoSidebar({ likes, shares, message }) {
   const [liked, setLiked] = useState(false);
 
   return (
@@ -22,11 +22,11 @@ function VideoSidebar({ like, shares, messages }) {
             onClick={(e) => setLiked(true)}
           />
         )}
-        <p>{liked ? like : like + 1}</p>
+        <p>{liked ? likes : likes + 1}</p>
       </div>
       <div className="videoSidebar__button">
         <CommentIcon fontSize="large" />
-        <p>{messages}</p>
+        <p>{message}</p>
       </div>
       <div className="videoSidebar__button">
         <ShareIcon fontSize="large" />
