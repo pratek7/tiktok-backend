@@ -8,7 +8,7 @@ const connection_url =
 // app config
 const app = express();
 
-const port = 8001;
+const port = process.env.PORT || 8001;
 // middleware
 app.use(express.json());
 app.use(Cors());
