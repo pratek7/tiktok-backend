@@ -49,4 +49,4 @@ app.post("/v2/posts", (req, res) => {
   });
 });
 
-app.listen(port, () => console.log(`listing on localhost:${port}`));
+app.listen(port, (port) => console.log(`listing on localhost:${port}`));
