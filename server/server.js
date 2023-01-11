@@ -1,17 +1,23 @@
 import express from "express";
 import mongoose from "mongoose";
 import Data from "./data.js";
+import Cors from "cors";
 import Videos from "./dbModel.js";
 const connection_url =
   "mongodb+srv://tiktok:6kmGhVRJxPuHSPV6@tiktok-api.vejf99x.mongodb.net/tiktok-api?retryWrites=true&w=majority";
 // app config
 const app = express();
 
-const port = 9000;
+const port = process.env.PORT || 8001;
 // middleware
 app.use(express.json());
+app.use(Cors());
+app.use((req, res, next) => {
+  res.setHeader("Acess-Control-Allow-Origin", "*");
+  res.setHeader("Acess-Control-Allow-Headers", "*");
+  next();
+});
 // db config
-
 mongoose.connect(connection_url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
