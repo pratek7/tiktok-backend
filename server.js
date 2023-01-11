@@ -18,7 +18,6 @@ app.use((req, res, next) => {
 // db config
 mongoose.connect(connection_url, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
 });
 
 // api endpoints
