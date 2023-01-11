@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   next();
 });
 // db config
-
+mongoose.set("strictQuery", false);
 mongoose.connect(connection_url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
